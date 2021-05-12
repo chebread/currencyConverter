@@ -35,7 +35,7 @@ while True:
     print("-- 가상화패: v / 나라: c (q:quit) --")
     type_coin = str(input())
     if type_coin == "q":
-        print("-- 종료 --")
+        print("== (종료) ==")
         exit()
     # Virtual currency
     if type_coin == "v":
