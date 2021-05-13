@@ -1,10 +1,11 @@
 # 환율 계산 프로그램
 
-# 21/5/12 기준 세계 환율
-usd = 1129.01 # 1 Dollar
-eur = 1361.21 # 1 Eur
-gbp = 1592.47 # 1 Found
-cny = 175.03 # 1 Wian
+# 21/5/13 기준 세계 환율
+usd = 1131.50 # 1 Dollar
+eur = 1368.09 # 1 Eur
+gbp = 1588.89 # 1 Found
+cny = 175.31 # 1 Wian
+iry = 15.38 # 1 rupy
 
 # 21/5/12 평균 기준 가상화패 환율
 bc = 64244338 # 1 BitCoin
@@ -49,22 +50,12 @@ while True:
             print("-- 원화: w / 환율: c (q:quit) --")
             bitcoin_currency = str(input())
             CoinCurrency(bitcoin_currency, bc, "BC")
-        elif type_virtual == 1:
-            print("-- 비트코인 환율 계산 --")
-            print("-- 원화: w / 환율: c (q:quit) --")
-            bitcoin_currency = str(input())
-            CoinCurrency(bitcoin_currency, bc, "BC")
-        elif type_virtual == 1:
-            print("-- 비트코인 환율 계산 --")
-            print("-- 원화: w / 환율: c (q:quit) --")
-            bitcoin_currency = str(input())
-            CoinCurrency(bitcoin_currency, bc, "BC")
         else:
             print("== (Error) ==")
     # 나라
     elif type_coin == "c":
         print("-- 환율 계산 --")
-        type_currency = int(input("1. 달러\n2. 유로\n3. 파운드\n4. 위안\n(0: quit)\n"))
+        type_currency = int(input("1. 달러\n2. 유로\n3. 파운드\n4. 위안\n5. 루피(0: quit)\n"))
         # 달라
         if type_currency == 0:
             print("== (종료) ==")
@@ -89,5 +80,10 @@ while True:
             print("-- 원화: w / 환율: c (q:quit) --")
             wian_currency = str(input())
             CoinCurrency(wian_currency, cny, "CNY")
+        elif type_currency == 5:
+            print("-- 루피 환율 계산 --")
+            print("-- 원화: w / 환율: c (q:quit) --")
+            found_currency = str(input())
+            CoinCurrency(found_currency, iry, "IRY")
         else:
             print("== (Error) ==")
