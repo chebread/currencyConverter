@@ -17,11 +17,15 @@ def CoinCurrency(coin, _type_, coin_name):
     if coin == "w":
         type_coin = float(input("코인: "))
         won = type_coin * _type_
-        print("-- %f 원 = %f %s --\n"%(won, type_coin, coin_name))
+        won = format(won,  ',')
+        type_coin = format(type_coin,  ',')
+        print("-- %s 원 = %s %s --\n"%(won, type_coin, coin_name))
     elif coin == "c":
         won = float(input("원화: "))
         type_coin = won / _type_
-        print("-- %f %s == %f 원 --\n"%(type_coin, coin_name, won))
+        type_coin = format(type_coin,  ',')
+        won = format(won,  ',')
+        print("-- %s %s == %s 원 --\n"%(type_coin, coin_name, won))
     else:
         print("== (Error) ==")
 
@@ -33,11 +37,42 @@ def CoinCurrency(coin, _type_, coin_name):
 while True:
     print("-- 환율 계산 프로그램 --")
     # 환율의 종류 선택
-    print("-- 가상화패: v / 나라: c (q:quit) --")
+    print("-- 가상화패: v / 나라: c --\n-- (f:setting) (q:quit) --")
     type_coin = str(input())
+    # 기능
     if type_coin == "q":
         print("== (종료) ==")
         exit()
+    if type_coin == "f":
+        print("== (설정) ==")
+        type_f = str(input("== (c:currency change) ==\n(q:quit)\n"))
+            #설정
+        if type_f == "c":
+            print("== (환율 값 설정) ==")
+            print("== (u:usd) ==\n== (e:eur) ==\n== (g:gdp) ==\n== (c:cny) ==\n==(i:iry) ==\n== (b:bc) ==\n(q:quit)")
+            c_short = str(input())
+            # 환율 값 설정
+            if c_short == "q":
+                print("== (종료) ==")
+                exit()
+            if c_short == "u":
+                usd = float(input("== (%s) ==\n"%("USD")))
+            elif c_short == "e":
+                eur = float(input("== (%s) ==\n"%("EUR")))
+            elif c_short == "g":
+                gbp = float(input("== (%s) ==\n"%("GBP")))
+            elif c_short == "c":
+                cny = float(input("== (%s) ==\n"%("CNY")))
+            elif c_short == "i":
+                iry = float(input("== (%s) ==\n"%("IRY")))
+            elif c_short == "b":
+                bc = float(input("== (%s) ==\n"%("BC")))
+            else:
+                print("== (Error) ==")
+        if type_f == "q":
+            print("== (종료) ==")
+            exit()
+
     # Virtual currency
     if type_coin == "v":
         print("-- 가상화패 환율 계산 --")
@@ -55,7 +90,7 @@ while True:
     # 나라
     elif type_coin == "c":
         print("-- 환율 계산 --")
-        type_currency = int(input("1. 달러\n2. 유로\n3. 파운드\n4. 위안\n5. 루피(0: quit)\n"))
+        type_currency = int(input("1. 달러\n2. 유로\n3. 파운드\n4. 위안\n5. 루피\n(0: quit)\n"))
         # 달라
         if type_currency == 0:
             print("== (종료) ==")
