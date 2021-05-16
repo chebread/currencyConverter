@@ -1,14 +1,14 @@
 # 환율 계산 프로그램
 
 # 21/5/13 기준 세계 환율
-usd = 1131.50 # 1 Dollar
-eur = 1368.09 # 1 Eur
-gbp = 1588.89 # 1 Found
-cny = 175.31 # 1 Wian
-iry = 15.38 # 1 rupy
+usd = 1126.56 # 1 Dollar
+eur = 1126.56 # 1 Eur
+gbp = 1588.45 # 1 Found
+cny = 175.01 # 1 Wian
+iry = 15.37 # 1 rupy
 
 # 21/5/12 평균 기준 가상화패 환율
-bc = 64244338 # 1 BitCoin
+bc = 55345414.36 # 1 BitCoin
 
 def CoinCurrency(coin, _type_, coin_name):
     if coin == "q":
