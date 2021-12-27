@@ -1,13 +1,17 @@
-# 환율 계산 프로그램
+# 환율 계산
 
-# 21/5/13 기준 세계 환율
+# 환율 기준 날짜 변수
+_world_ = "21년/5월/16일" # 환율
+_virtual_world_ = "21년/5월/16일" # 가상화폐
+
+# 세계 환율 기준
 usd = 1126.56 # 1 Dollar
 eur = 1126.56 # 1 Eur
 gbp = 1588.45 # 1 Found
 cny = 175.01 # 1 Wian
 iry = 15.37 # 1 rupy
 
-# 21/5/12 평균 기준 가상화패 환율
+# 가상화패 환율 기준
 bc = 55345414.36 # 1 BitCoin
 
 def CoinCurrency(coin, _type_, coin_name):
@@ -29,13 +33,9 @@ def CoinCurrency(coin, _type_, coin_name):
     else:
         print("== (Error) ==")
 
-# 원-환율 계산법:
-# 미국) (코인) * (환율) = 원화, 원화 / 환율 = 달러
-# 유럽) (코인) * 환율 = 원화, 원화 / 환율 = 유로
-# 중국) = 위안
-# 영국) 파운드
 while True:
     print("-- 환율 계산 프로그램 --")
+    print("-> 세계 %s 기준 환율 <-\n-> 가상화페 %s 기준 환율 <-"%(_world_, _virtual_world_))
     # 환율의 종류 선택
     print("-- 가상화패: v / 나라: c --\n-- (f:setting) (q:quit) --")
     type_coin = str(input())
